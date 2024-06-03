@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <!-- 遍历arr数组 -->
+            <li v-for="(item) in arr">{{item}}</li>
+            <!-- 求出索引值 -->
+            <li v-for="(index,item) in arr">{{item}}----{{index}}</li>
+        </ul>
+    </div>
+
+
+</body>
+<script>
+    var v = new Vue({
+        el: '#app',
+        data: {
+            arr: ['jack', 'tom', 'lucy']
+        }
+    })
+
+
+
+
+</script>
+
+</html>
