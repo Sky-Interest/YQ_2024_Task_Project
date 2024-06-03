@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/vue-2.6.10.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span v-if = "flag">有趣</span>
+
+
+    </div>
+
+
+</body>
+<script>
+    //v-model
+    var v = new Vue({
+        el: '#app',
+        data: {
+            // msg: 'hello v-model'
+            flag:true //flase代表DOM不渲染
+        }
+
+    })
+
+</script>
+
+</html>
