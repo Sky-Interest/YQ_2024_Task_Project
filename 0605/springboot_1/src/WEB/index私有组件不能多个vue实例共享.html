@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue-2.6.10.js"></script>
+</head>
+<body>
+<div id="app">
+    <login></login>
+    <login></login>
+    <login></login>
+</div>
+
+<div id="app2">
+    <login></login>
+    <login></login>
+    <login></login>
+</div>
+</body>
+</html>
+<script>
+    var v = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world'
+        },
+        components: {
+            'login':{
+                template:'<h1>我是登录组件</h1>'
+            }
+        }
+    })
+
+    var  v2 = new Vue({
+        el:'#app2',
+        data:{
+
+        }
+    })
+</script>
