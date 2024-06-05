@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue-2.6.10.js"> </script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+
+        <mycom1></mycom1>
+        <mycom1></mycom1>
+        <mycom1></mycom1>
+    </div>
+</body>
+</html>
+<script>
+    //  创建  和  注册
+    Vue.component("mycom1",{
+        template:'<h1>我是一个组件</h1>'
+    })
+
+    var v = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello world'
+        }
+    })
+</script>
