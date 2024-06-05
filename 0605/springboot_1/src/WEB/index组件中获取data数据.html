@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue-2.6.10.js"></script>
+
+</head>
+<body>
+<template id="temp1">
+    <div>
+        <h1>我是组件的标题</h1>
+        <span>我是组件的副标题</span>
+        <p>{{message}}</p>
+    </div>
+</template>
+
+<div id="app">
+    <login1></login1>
+</div>
+</body>
+<script>
+
+    Vue.component('login1',{
+        template:'#temp1',
+        data(){
+            return{
+                message:'hello world'
+            }
+        }
+    })
+
+    var v = new Vue({
+        el:'#app',
+        data:{
+
+        }
+    })
+</script>
+</html>
