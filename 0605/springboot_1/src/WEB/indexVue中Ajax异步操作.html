@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue-2.6.10.js"></script>
+    <script src="./js/axios.js"></script>
+</head>
+<body>
+<div id="app">
+
+
+</div>
+
+
+<script>
+    //简化写法
+    axios.get('http://localhost:8080/userlist').then((response)=>{
+        console.log(response);
+    })
+
+    // get传参方式1
+    axios.get('http://localhost:8080/geta?id=1')
+        .then(response=>{
+            console.log(response);
+        })
+        .catch(function(err){
+            console.log(err);
+        });
+
+    //get传参方式2
+    axios.get('http://localhost:8080/geta',{params:{id:1}})
+        .then(function(response){
+            console.log(response);
+        })
+        .catch(function(err){
+            console.log(err);
+        });
+
+    // Send a POST request
+    axios({
+        method: 'post',
+        url: '/user/12345',
+        data: {
+            firstName: 'Fred',
+            lastName: 'Flintstone'
+        }
+    });
+
+
+
+
+</script>
+</body>
+</html>
