@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue-2.6.10.js"></script>
+    <script src="./js/axios.js"></script>
+</head>
+<body>
+<div id="app">
+
+    <table>
+        <tr>
+            <td>用户id</td>
+            <td>用户姓名</td>
+            <td>用户密码</td>
+            <td>用户地址</td>
+        </tr>
+
+
+        <tr v-for="user in userList">
+            <td>{{user.id}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.address}}</td>
+        </tr>
+
+    </table>
+
+</div>
+
+<script>
+    var v = new Vue({
+        el: '#app',
+        data: {
+            userList:[]
+        },
+        created () {
+            //console.log(this);
+            // this  -> Vue
+            var _this = this;
+
+            //通过axios 发送get请求
+            axios.get('http://localhost:8080/userlist').then(function(response) {
+                // this  -> window
+                //   console.log(response);
+                //   console.log(response.data);
+                //  userList = response.data;
+                //  console.log(userList);
+                // this.userList = response.data;
+                // console.log(this.userList);
+                //console.log(this);
+                //console.log(_this);
+                _this.userList = response.data;
+
+                console.log(_this.userList);
+            })
+        }
+    });
+</script>
+</body>
+</html>
