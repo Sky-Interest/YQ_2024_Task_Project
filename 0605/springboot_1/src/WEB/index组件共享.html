@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./js/vue-2.6.10.js"> </script>
+</head>
+<body>
+<div id="app">
+    <!-- 3.使用组件 -->
+    <mycom1></mycom1>
+    <mycom1></mycom1>
+    <mycom1></mycom1>
+</div>
+<hr>
+<br>
+<br>
+
+<div id="app2">
+    <mycom1></mycom1>
+    <mycom1></mycom1>
+</div>
+</body>
+</html>
+<script>
+
+
+    //1. 创建组件
+    var com1 =  Vue.extend({
+        template:'<h1>我是h1</h1>'
+    })
+
+    //2. 注册组件
+    Vue.component('mycom1',com1);
+
+    var v = new Vue({
+        el:'#app',
+        data:{
+            msg:'hello vue'
+        }
+    })
+    var v2 = new Vue({
+        el:'#app2',
+        data:{
+            msg:'hello vue2'
+        }
+    })
+
+</script>
